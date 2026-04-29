@@ -54,3 +54,9 @@ Zero-data transmission (complete privacy), offline accessibility, and explicit s
 
 ## 15. Anything Unclear or Inferred from Repo Contents
 References to "institutional customization" suggest the app is intended as a base for white-labeled versions but details are not provided in the public repo code.
+
+## Capability and Governance Alignment
+This tool is aligned with the CloudPedagogy Capability and Governance standard.
+Capability: The tool supports development of practical AI capability through structured interaction and workflow use.
+Governance: The tool includes lightweight, optional fields that make assumptions, risks, and decisions visible and reviewable.
+This alignment ensures the tool supports both effective use of AI and responsible, accountable practice.

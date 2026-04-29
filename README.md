@@ -19,7 +19,6 @@ Feeds structured workflow data into the **Capability Assessment Tool** and **Gov
 - Perform automated curriculum simulation.
 - Record live individual decision outcomes in production (this is for the Decision Record).
 
-For a full system overview, see: [SYSTEM_OVERVIEW.md](../SYSTEM_OVERVIEW.md)
 
 It enables educators, researchers, strategy teams, and governance
 leaders to:
@@ -303,3 +302,11 @@ education and public sector strategy.
 
 AI Capability Studio operationalises structured human--AI collaboration
 in complex institutional environments.
+
+## Capability and Governance
+
+This tool supports both AI capability development and lightweight governance.
+
+Capability is developed through structured interaction with real workflows.
+Governance is supported through optional fields that make assumptions, risks, and decisions visible.
+All governance inputs are optional and designed to support — not constrain — professional judgement.
