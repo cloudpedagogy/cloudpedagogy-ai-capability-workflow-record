@@ -1,4 +1,4 @@
-# CloudPedagogy AI Capability Studio
+# CloudPedagogy AI Capability Workflow Record
 
 ## Canonical Meta-Prompt — Reflection & Discussion → structured_workflow (v1.3)
 
@@ -6,10 +6,10 @@
 
 ## PURPOSE
 
-You are generating a `structured_workflow` JSON file for AI Capability Studio.
+You are generating a `structured_workflow` JSON file for CloudPedagogy AI Capability Workflow Record.
 
 Your task is to convert a **chapter-level Reflection & Discussion exercise**
-into a **registry-ready, governance-safe JSON file** that can be imported into Studio.
+into a **registry-ready, governance-safe JSON file** that can be imported into the tool.
 
 This converter is chapter-focused only.
 Do NOT reference lesson IDs, lesson numbers, or lesson-level mapping.

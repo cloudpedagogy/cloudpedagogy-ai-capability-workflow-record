@@ -1,9 +1,9 @@
-# CloudPedagogy AI Capability Studio
+# CloudPedagogy AI Capability Workflow Record
 
 ## Exercise ID Convention (Canonical Specification v1.2)
 
 This document defines the **mandatory naming convention** for all
-`structured_workflow` JSON exercise files used in AI Capability Studio.
+`structured_workflow` JSON exercise files used in CloudPedagogy AI Capability Workflow Record.
 
 These rules ensure:
 
@@ -25,7 +25,7 @@ Each exercise ID:
 
 -   Acts as a registry key
 -   Is referenced by localStorage projects
--   May be parsed by Studio for exercise-type detection
+-   May be parsed by the tool for exercise-type detection
 -   May be used in governance documentation
 -   May be bundled via `/exercises/index.json`
 -   Must remain stable once published
@@ -42,7 +42,7 @@ All exercise IDs must:
 -   Use hyphenated course slugs
 -   Use double-underscore separators `__`
 -   Use zero-padded chapter numbers (ch03)
--   Avoid lesson identifiers (Studio is chapter-level only)
+-   Avoid lesson identifiers (the tool is chapter-level only)
 -   Avoid timestamps
 -   Avoid random tokens
 -   Avoid spaces
@@ -119,7 +119,7 @@ When bundling exercises for hosted deployment:
 
 # 8. Hosted Deployment Considerations
 
-When Studio is hosted (e.g., S3, GitHub Pages):
+When the tool is hosted (e.g., S3, GitHub Pages):
 
 -   Exercise IDs function identically to local deployments
 -   Projects remain stored in end-user browser localStorage

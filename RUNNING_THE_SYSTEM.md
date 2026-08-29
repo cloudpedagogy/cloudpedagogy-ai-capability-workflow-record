@@ -1,7 +1,7 @@
-# Running the System Locally
+# Running CloudPedagogy AI Capability Workflow Record Locally
 
 ## View Locally
-To view the AI Capability Studio locally, run a static file server from the project root.
+To view CloudPedagogy AI Capability Workflow Record locally, run a static file server from the project root.
 
 ### Python 3
 ```bash

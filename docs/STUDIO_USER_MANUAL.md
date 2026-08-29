@@ -1,10 +1,10 @@
 
-# AI Capability Studio — User Manual (v2.3)
+# CloudPedagogy AI Capability Workflow Record — User Manual (v2.3)
 
-AI Capability Studio is an offline‑first structured workflow tool
+CloudPedagogy AI Capability Workflow Record is an offline‑first structured workflow tool
 for documenting human–AI collaboration in curriculum, foresight, and strategic design work.
 
-Studio does NOT generate AI content.
+The tool does NOT generate AI content.
 It structures your workflow, records decisions, and produces governance‑ready documentation.
 
 All exercises are chapter‑level `structured_workflow` JSON files generated
@@ -14,7 +14,7 @@ using the Canonical Meta‑Prompt Pack.
 
 # Important Hosting & Data Clarification
 
-AI Capability Studio may be accessed:
+CloudPedagogy AI Capability Workflow Record may be accessed:
 
 - Locally (via localhost)
 - Via static hosting (e.g., AWS S3, GitHub Pages)
@@ -32,9 +32,9 @@ Users are strongly advised to export their work regularly.
 
 ---
 
-# How Studio Works (Read This First)
+# How the Workflow Record Tool Works (Read This First)
 
-AI Capability Studio separates three things:
+CloudPedagogy AI Capability Workflow Record separates three things:
 
 ## 1️⃣ Exercises (Templates)
 - JSON files that define a 6‑step structured workflow.
@@ -67,7 +67,7 @@ Export regularly if you need backup or sharing.
 
 ## 3️⃣ AI Outputs
 
-Studio does not call AI APIs.
+The tool does not call AI APIs.
 
 Instead:
 
@@ -75,15 +75,15 @@ Instead:
 2. You click **Copy Prompt**.
 3. You run the prompt in an external AI tool (ChatGPT, Claude, Gemini, etc.).
 4. You treat the output as a draft artefact for review.
-5. You paste relevant structured conclusions back into Studio fields (optional but recommended).
+5. You paste relevant structured conclusions back into the tool fields (optional but recommended).
 
-Studio records your structured judgement — not raw AI content by default.
+The tool records your structured judgement — not raw AI content by default.
 
 ---
 
 # Part 1 — Importing an Exercise
 
-## 1. Open Studio
+## 1. Open the Tool
 
 Open `index.html` using:
 
@@ -92,7 +92,7 @@ Open `index.html` using:
 - GitHub Pages
 - Any static hosting provider
 
-Studio runs entirely in the browser.
+The tool runs entirely in the browser.
 
 ---
 
@@ -120,7 +120,7 @@ If successful:
 - The exercise appears in the dropdown menu.
 - It becomes available for new projects.
 
-Studio does not modify imported files.
+The tool does not modify imported files.
 
 ---
 
@@ -195,7 +195,7 @@ AI outputs are advisory drafts only.
 
 All entries are stored automatically in browser `localStorage`.
 
-Studio:
+The tool:
 
 - Does not transmit data
 - Does not store data remotely
@@ -232,7 +232,7 @@ Export frequently for backup.
 
 # Governance Positioning & Disclaimer
 
-AI Capability Studio is an open-source support tool provided for structured documentation and reflective practice.
+CloudPedagogy AI Capability Workflow Record is an open-source support tool provided for structured documentation and reflective practice.
 
 It:
 
@@ -256,12 +256,12 @@ Manual v2.3 aligns with:
 - Canonical Meta‑Prompt Pack v1.3
 - structured_workflow schema_version 1.0
 - Exercise ID Convention v1.1
-- Studio runtime v0.1.x
+- Workflow Record runtime v0.1.x
 
 Future versions may introduce additional template families or validation features.
 
 ---
 
-AI Capability Studio remains a structured thinking environment, not an automation engine.
+CloudPedagogy AI Capability Workflow Record remains a structured thinking environment, not an automation engine.
 
 Human judgement is final authority.

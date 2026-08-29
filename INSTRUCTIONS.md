@@ -1,7 +1,7 @@
-# AI Capability Studio — User Instructions
+# AI Capability Workflow Record — User Instructions
 
 ## What the tool does
-This tool supports both AI capability development and lightweight governance through structured human-AI workflow documentation.
+CloudPedagogy AI Capability Workflow Record supports both AI capability development and lightweight governance through structured human-AI workflow documentation.
 
 ## How capability is developed through use
 Capability is developed by guiding users through structured workflows where they must parameterize AI prompts, critically evaluate AI outputs, and record refined human judgments. This process builds practical experience in co-agency with AI.

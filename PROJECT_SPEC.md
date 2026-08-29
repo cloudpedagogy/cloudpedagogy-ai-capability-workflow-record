@@ -1,10 +1,10 @@
-# PROJECT_SPEC: ai capability studio
+# PROJECT_SPEC: CloudPedagogy AI Capability Workflow Record
 
 ## 1. Repo Name
-`ai capability studio`
+`cloudpedagogy-ai-capability-workflow-record`
 
 ## 2. One-Sentence Purpose
-A static, offline-first browser tool for documenting and governing structured human-AI workflows.
+A static, offline-first browser tool for documenting structured human-AI workflows and generating reviewable AI Workflow Records.
 
 ## 3. Problem the App Solves
 Lack of clear audit trails, human oversight documentation, and privacy-preserving environments for AI-assisted institutional workflows (higher education/public sector).
@@ -13,7 +13,7 @@ Lack of clear audit trails, human oversight documentation, and privacy-preservin
 Educators, researchers, strategy teams, and governance leaders.
 
 ## 5. Core Role in the CloudPedagogy Ecosystem
-Operationalizes AI capability frameworks by providing a practical, governance-compliant interface for documenting structured collaboration between humans and AI.
+Operationalises AI capability frameworks by providing a practical, privacy-preserving interface for documenting structured collaboration between humans and AI and generating reviewable AI Workflow Records.
 
 ## 6. Main Entities / Data Structures
 - **Project**: Stores the user's current session state, including inputs, completed steps, and prompt snapshots.
@@ -41,10 +41,10 @@ Operationalizes AI capability frameworks by providing a practical, governance-co
 - **Export**: JSON `Project` files and Markdown audit records.
 
 ## 11. Relationship to Other CloudPedagogy Apps
-Acts as a reference implementation for executing workflows designed by the "Meta-Prompt Pack" or theoretical capability frameworks defined in other repositories.
+Acts as a reference implementation for executing workflows designed by the "Meta-Prompt Pack" or capability frameworks defined in other repositories. It can operate independently and is also integrated as the AI Capability Workflow Record module within the broader CloudPedagogy AI Capability Studio.
 
 ## 12. Potential Overlap or Duplication Risks
-May overlap with specific feature areas of `curriculum-simulation-tool` or `workflow-governance-designer`, but focuses specifically on the *recording* of the live workflow.
+May overlap with specific feature areas of `curriculum-simulation-tool` or `workflow-governance-designer`, but focuses specifically on the *recording* of structured human-AI workflow practice.
 
 ## 13. Distinctive Value of This App
 Zero-data transmission (complete privacy), offline accessibility, and explicit separation of "Exercises" (blueprints) from "Projects" (active work).

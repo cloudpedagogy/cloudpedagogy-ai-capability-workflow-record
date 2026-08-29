@@ -1,13 +1,13 @@
-# CloudPedagogy AI Capability Studio
+# CloudPedagogy AI Capability Workflow Record
 
 ## Meta‑Prompt Pack (v1.3 --- Chapter-Level Architecture)
 
 This folder contains the canonical meta‑prompts used to generate
-Studio‑compatible `structured_workflow` JSON exercise files.
+compatible `structured_workflow` JSON exercise files.
 
 These meta‑prompts convert CloudPedagogy **chapter-level exercises**
 into governance‑ready, registry‑safe JSON files that can be imported
-into AI Capability Studio.
+into CloudPedagogy AI Capability Workflow Record.
 
 All exercise generation follows the **Chapter-Level ID Convention
 (v1.1)**. Lesson identifiers (lsNN) are not used anywhere in the system.
@@ -16,7 +16,7 @@ All exercise generation follows the **Chapter-Level ID Convention
 
 ## 🎯 Purpose
 
-AI Capability Studio does **not** generate exercises internally.
+CloudPedagogy AI Capability Workflow Record does **not** generate exercises internally.
 
 Instead, exercises are:
 
@@ -25,11 +25,11 @@ Instead, exercises are:
 3.  Saved as JSON\
 4.  Placed inside the `/exercises/` folder (for bundling) **or imported
     manually**\
-5.  Loaded by the Studio runtime\
+5.  Loaded by the application runtime\
 6.  Used to create local projects\
 7.  Exported as governance-ready AI Workflow Records
 
-This separation keeps the Studio:
+This separation keeps the tool:
 
 -   Lightweight\
 -   Offline‑first\
@@ -39,7 +39,7 @@ This separation keeps the Studio:
 -   Scalable across courses and bundles
 
 Exercises are content.\
-Studio is runtime.
+The tool is runtime.
 
 ------------------------------------------------------------------------
 
@@ -49,7 +49,7 @@ Each folder corresponds to a structured exercise type.
 
 All exercise types are **chapter-level only**.
 
-All types use the same `structured_workflow` template in the Studio UI.
+All types use the same `structured_workflow` template in the tool UI.
 The difference lies in **intent and ID prefix**, not in runtime template
 type.
 
@@ -147,7 +147,7 @@ Format:
 7.  Save using the canonical filename.
 
 8.  Place in `/exercises/` (for bundled hosting) **or import via the
-    Studio UI**.
+    tool UI**.
 
 Do NOT provide:
 
@@ -155,18 +155,18 @@ Do NOT provide:
 -   lesson identifiers\
 -   custom ID formats
 
-Studio is chapter-level only.
+The tool is chapter-level only.
 
 ------------------------------------------------------------------------
 
 ## 📁 Operational Note: The `/exercises/` Folder
 
 The `/exercises/` folder is operationally required **only if you are
-bundling exercises with the hosted Studio instance**.
+bundling exercises with the hosted tool instance**.
 
 If you:
 
--   Are hosting Studio on S3 / GitHub Pages / CDN\
+-   Are hosting the tool on S3 / GitHub Pages / CDN\
 -   Want bundled exercises to auto-load
 
 Then:
@@ -225,7 +225,7 @@ ID stability ensures long‑term portability and audit traceability.
 
 The Meta‑Prompt Pack is independent of deployment.
 
-Whether Studio is:
+Whether the tool is:
 
 -   Run locally (`localhost`)\
 -   Hosted on S3\
@@ -267,14 +267,14 @@ The Meta‑Prompt Pack enables:
 -   Deterministic schema alignment\
 -   Long-term registry stability
 
-Studio remains small and static.\
+The tool remains small and static.\
 Exercises scale externally.\
 Projects remain local.\
 Exports become portable artefacts.
 
 ------------------------------------------------------------------------
 
-CloudPedagogy AI Capability Studio\
+CloudPedagogy AI Capability Workflow Record\
 Meta‑Prompt Pack v1.3
 
 Aligned to:
@@ -282,4 +282,4 @@ Aligned to:
 -   Chapter-Level Architecture (locked)\
 -   Exercise ID Convention v1.1\
 -   `structured_workflow` schema 1.0\
--   Studio v0.1.x runtime
+-   Workflow Record v0.1.x runtime

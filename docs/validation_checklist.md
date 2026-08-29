@@ -1,7 +1,7 @@
 # Structured Workflow JSON — Validation Checklist (v1.3)
 
-Use this checklist to verify that a generated JSON file is **Studio-compatible, registry-safe, and governance-ready**
-before importing it into AI Capability Studio.
+Use this checklist to verify that a generated JSON file is **compatible, registry-safe, and governance-ready**
+before importing it into CloudPedagogy AI Capability Workflow Record.
 
 This checklist applies to **exercise definition files only** (structured_workflow JSON).
 It does NOT apply to exported project records.
@@ -12,7 +12,7 @@ Aligned to:
 - Exercise ID Convention v1.1
 - structured_workflow schema_version 1.0 (locked)
 - Canonical Meta-Prompt Pack v1.3
-- Studio v0.1.x runtime (static, offline-first)
+- Workflow Record v0.1.x runtime (static, offline-first)
 
 ---
 
@@ -226,7 +226,7 @@ And:
 
 ## Final Decision
 
-- [ ] Ready to import into Studio
+- [ ] Ready to import into the tool
 - [ ] Requires revision
 
 If any section fails, revise using the appropriate Canonical Meta-Prompt before import.

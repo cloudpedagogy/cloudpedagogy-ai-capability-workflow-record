@@ -1,10 +1,10 @@
 {
-  "name": "cloudpedagogy-ai-capability-studio",
+  "name": "cloudpedagogy-ai-capability-workflow-record",
   "version": "0.1.2",
   "private": true,
-  "description": "CloudPedagogy AI Capability Studio - Refactored to Standard UI",
+  "description": "CloudPedagogy AI Capability Workflow Record - Refactored to Standard UI",
   "scripts": {
-    "build": "cp -r index.html app.js styles.css assets exercises dist/",
+    "build": "mkdir -p dist && cp -r index.html app.js styles.css assets exercises dist/",
     "preview": "python3 -m http.server 8000 --directory dist"
   }
 }

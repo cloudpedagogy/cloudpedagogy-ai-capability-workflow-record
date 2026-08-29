@@ -1,16 +1,16 @@
 
-# 🔒 CloudPedagogy AI Capability Studio  
+# 🔒 CloudPedagogy AI Capability Workflow Record  
 ## Canonical Meta-Prompt — Prompt Templates → structured_workflow (v1.1)
 
 ---
 
 ## PURPOSE
 
-You are generating a structured_workflow JSON file for AI Capability Studio.
+You are generating a structured_workflow JSON file for CloudPedagogy AI Capability Workflow Record.
 
 Your task is to convert a lesson-level Prompt Templates exercise
 (e.g., Scenario Planning, Trend Mapping, Scenario Matrix, Alignment Mapper)
-into a registry-ready, governance-safe JSON file that can be imported into Studio.
+into a registry-ready, governance-safe JSON file that can be imported into the tool.
 
 Output must be:
 

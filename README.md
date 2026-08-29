@@ -1,8 +1,14 @@
-# CloudPedagogy AI Capability Studio
+# CloudPedagogy AI Capability Workflow Record
 
-AI Capability Studio is a static, offline-first, browser-based tool for **structured human--AI workflow documentation**.
+CloudPedagogy AI Capability Workflow Record is a static, offline-first, browser-based tool for **structured human--AI workflow documentation and AI Workflow Record generation**.
+
+**Repository:** `cloudpedagogy-ai-capability-workflow-record`
+
+The tool can operate independently and is also integrated as the **AI Capability Workflow Record** module within the broader **CloudPedagogy AI Capability Studio** desktop application. It does not require the desktop Studio to run.
 
 ## 🔗 Role in the CloudPedagogy Ecosystem
+
+**Source repository:** https://github.com/cloudpedagogy/cloudpedagogy-ai-capability-workflow-record
 
 **Phase:** Phase 5 — Infrastructure / Meta Layer
 
@@ -32,48 +38,13 @@ leaders to:
 All exercises follow a **chapter-level `structured_workflow`
 architecture (schema v1.0)**.
 
-------------------------------------------------------------------------
-
-## 🌐 Live Hosted Version
-
-The Studio is publicly accessible at:
-
-http://cloudpedagogy-ai-capability-studio.s3-website.eu-west-2.amazonaws.com/
-
-The hosted version behaves identically to a locally run version.
-
-**Important:**\
-All projects created on the hosted site are stored **only in the user's
-browser (localStorage)**.\
-No project data is transmitted to, stored by, or accessible to
-CloudPedagogy.
-
-------------------------------------------------------------------------
-
-## 🖼️ Screenshot
-
-### Dashboard
-
-![Project Dashboard](assets/images/dashboard.png)
-
-### Creating a New Project
-
-![New Project Modal](assets/images/new-project.png)
-
-### Structured Workflow Step
-
-![Workflow Step](assets/images/workflow-step.png)
-
-### Exporting a Governance Record
-
-![Export Markdown](assets/images/export-md.png)
 
 ------------------------------------------------------------------------
 
 ## 🎬 What This Repository Demonstrates
 
 This repository is a **working prototype + reference implementation** of
-AI Capability Studio.
+CloudPedagogy AI Capability Workflow Record.
 
 It includes:
 
@@ -94,9 +65,9 @@ In normal institutional use:
 
 ------------------------------------------------------------------------
 
-## 🔍 How Studio Works
+## 🔍 How the Workflow Record Tool Works
 
-Studio separates **exercise templates**, **projects**, and **AI
+The tool separates **exercise templates**, **projects**, and **AI
 outputs**.
 
 ### Exercises (Templates)
@@ -115,7 +86,7 @@ Exercises are reusable workflow blueprints.
 
 ### Projects (User Work)
 
-When a user clicks **New Project**, Studio:
+When a user clicks **New Project**, the tool:
 
 -   Creates a project linked to one exercise\
 -   Auto-saves continuously using browser `localStorage`\
@@ -136,7 +107,7 @@ stored projects.
 
 ### AI Outputs
 
-Studio does not call AI APIs.
+The tool does not call AI APIs.
 
 Instead:
 
@@ -144,7 +115,7 @@ Instead:
 2.  Click **Copy Prompt**\
 3.  Paste into an external AI tool (ChatGPT, Claude, Gemini, etc.)\
 4.  Critically review outputs\
-5.  Record refined human judgement in Studio
+5.  Record refined human judgement in the tool
 
 AI outputs are advisory drafts. Human decision authority remains
 explicit and documented.
@@ -153,7 +124,7 @@ explicit and documented.
 
 ## 🏗 Architecture
 
-AI Capability Studio is:
+CloudPedagogy AI Capability Workflow Record is:
 
 -   Pure HTML\
 -   Vanilla JavaScript\
@@ -173,7 +144,7 @@ Suitable for governance-sensitive institutional environments.
 
 ------------------------------------------------------------------------
 
-## 🚀 Running the Studio
+## 🚀 Running the Application
 
 ### Hosted (Recommended for End Users)
 
@@ -204,7 +175,7 @@ security restrictions. Use **Import Exercise JSON** instead.
 
 ## 📤 Exporting Records
 
-Studio supports:
+The tool supports:
 
 -   Markdown export (.md)\
 -   JSON export (.json)
@@ -238,7 +209,7 @@ records.
 
 ## ⚖ Disclaimer & Positioning
 
-AI Capability Studio is provided as an open-source, static workflow
+CloudPedagogy AI Capability Workflow Record is provided as an open-source, static workflow
 support tool.
 
 It is offered as a **supplementary implementation layer** to paid
@@ -265,7 +236,7 @@ All example data and structures are synthetic and do not represent any real inst
 
 ## 🔧 Extensibility
 
-AI Capability Studio is open-source and may be adapted or extended to
+CloudPedagogy AI Capability Workflow Record is open-source and may be adapted or extended to
 suit institutional needs.
 
 Typical extension areas include:
@@ -300,7 +271,7 @@ CloudPedagogy develops governance-ready AI capability frameworks,
 structured curriculum tools, and practical workflow systems for higher
 education and public sector strategy.
 
-AI Capability Studio operationalises structured human--AI collaboration
+CloudPedagogy AI Capability Workflow Record operationalises structured human--AI collaboration
 in complex institutional environments.
 
 ## Capability and Governance

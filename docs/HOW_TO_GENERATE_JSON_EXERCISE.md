@@ -1,8 +1,8 @@
 
-# How to Generate a Structured Workflow JSON for AI Capability Studio (v2.1)
+# How to Generate a Structured Workflow JSON for CloudPedagogy AI Capability Workflow Record (v2.1)
 
 This guide explains how to convert CloudPedagogy **chapter-level exercises**
-into Studio-compatible `structured_workflow` JSON files
+into compatible `structured_workflow` JSON files
 using the Canonical Meta‑Prompt Pack.
 
 This document applies to the **chapter-level architecture (Exercise ID Convention v1.1)**
@@ -12,12 +12,12 @@ and Meta‑Prompt Pack v1.3.
 
 ## Important Distinction: Exercise Files vs Projects
 
-AI Capability Studio works with two completely different artefact types:
+CloudPedagogy AI Capability Workflow Record works with two completely different artefact types:
 
 **1. Exercise Definition Files (JSON)**
 - Generated using canonical meta-prompts
 - Define workflow structure (6-step model)
-- Imported into Studio
+- Imported into the tool
 - Stored in `/exercises/`
 - May be bundled via `/exercises/index.json`
 
@@ -32,9 +32,9 @@ They do **not** generate projects.
 
 -----------------------------------------------------------------------
 
-## Studio Characteristics
+## Tool Characteristics
 
-Studio is:
+The tool is:
 
 - Offline-first
 - Static (HTML + Vanilla JS)
@@ -50,7 +50,7 @@ canonical meta‑prompt.
 
 # Overview of Exercise Types
 
-AI Capability Studio supports three structured exercise types:
+CloudPedagogy AI Capability Workflow Record supports three structured exercise types:
 
 1. Framework Application  
    ID prefix: `fw_apply__`  
@@ -80,7 +80,7 @@ No lesson identifiers (`lsNN`) are permitted.
 2. The correct canonical meta‑prompt file.
 3. Access to a capable large language model (e.g., ChatGPT, Claude, Gemini).
 
-Studio does not require any specific AI vendor.
+The tool does not require any specific AI vendor.
 
 -----------------------------------------------------------------------
 
@@ -140,7 +140,7 @@ chapter_number: 3
 exercise_text:  
 [paste full exercise text here]
 
-Do NOT include `lesson_title` (Studio is chapter-level only).
+Do NOT include `lesson_title` (the tool is chapter-level only).
 
 -----------------------------------------------------------------------
 
@@ -205,17 +205,17 @@ The ID acts as a registry key and must remain stable.
 
 -----------------------------------------------------------------------
 
-# Step 7 — Import into Studio
+# Step 7 — Import into the Tool
 
 Option A — Bundled (recommended for hosted versions):
 
 1. Add file to `/exercises/`
 2. Update `/exercises/index.json`
-3. Reload Studio
+3. Reload the application
 
 Option B — Manual Import:
 
-1. Open AI Capability Studio
+1. Open CloudPedagogy AI Capability Workflow Record
 2. Click "Import Exercise JSON"
 3. Upload the file
 4. Confirm it appears in the dropdown
@@ -245,5 +245,5 @@ This document aligns with:
 
 - Exercise ID Convention v1.1
 - structured_workflow schema_version 1.0
-- Studio v0.1.1
+- Runtime v0.1.1
 - Canonical Meta‑Prompt Pack v1.3

@@ -1,6 +1,6 @@
 
 # 📘 Meta‑Prompt Pack v1.3 Specification
-CloudPedagogy AI Capability Studio
+CloudPedagogy AI Capability Workflow Record
 
 ---
 
@@ -12,14 +12,14 @@ transforming structured CloudPedagogy chapter exercises into:
 - `structured_workflow` JSON files
 - Governance‑ready artefacts
 - AI Workflow Records
-- Registry‑safe imports for AI Capability Studio
+- Registry‑safe imports for CloudPedagogy AI Capability Workflow Record
 
 This specification aligns with:
 
 - Chapter-Level Architecture (locked)
 - Exercise ID Convention v1.1
 - structured_workflow schema v1.0
-- Studio runtime v0.1.x
+- Workflow Record runtime v0.1.x
 
 ---
 
@@ -139,7 +139,7 @@ Meta‑Prompt Pack v1.3 forms the deterministic conversion layer between:
 
 Course Intellectual Property  
 → Structured Workflow JSON  
-→ Studio Runtime Execution  
+→ Workflow Record Runtime Execution  
 → AI Workflow Records  
 → Institutional Governance Artefacts  
 
