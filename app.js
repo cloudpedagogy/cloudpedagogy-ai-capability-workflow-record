@@ -47,7 +47,7 @@ function loadProjectStore() {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) return { app_version: APP_VERSION, projects: [] };
     const parsed = JSON.parse(raw);
-    if (!parsed.projects) return { app_version: APP_VERSION, projects: [] };
+    if (!parsed || !Array.isArray(parsed.projects)) return { app_version: APP_VERSION, projects: [] };
     return parsed;
   } catch {
     return { app_version: APP_VERSION, projects: [] };
@@ -644,6 +644,10 @@ function deleteProject(projectId) {
   const ok = confirm(`Delete "${p.name}"? This cannot be undone.`);
   if (!ok) return;
   STORE.projects = STORE.projects.filter(x => x.id !== projectId);
+  if (ACTIVE_PROJECT_ID === projectId) {
+    ACTIVE_PROJECT_ID = null;
+    showDashboard();
+  }
   saveProjectStore(STORE);
   renderDashboard();
 }
@@ -671,7 +675,9 @@ async function renderRunner() {
   runnerProjectTitle.textContent = project.name;
   runnerProjectSub.textContent = `${project.exercise.title} · ${TEMPLATE_LABELS[project.exercise.template] || project.exercise.template}`;
 
-  runnerBody.innerHTML = `<div class="empty"><div class="empty__title">Loading exercise…</div><div class="empty__desc">Fetching definition (bundled/imported).</div></div>`;
+  if (!EXERCISE_CACHE.has(project.exercise.id)) {
+    runnerBody.innerHTML = `<div class="empty"><div class="empty__title">Loading exercise…</div><div class="empty__desc">Fetching definition (bundled/imported).</div></div>`;
+  }
 
   try {
     const exercise = await fetchExerciseById(project.exercise.id);
@@ -699,9 +705,11 @@ async function renderRunner() {
           ? renderStructuredWorkflowFramework(project, exercise)
           : renderStructuredWorkflowLegacy(project, exercise);
 
-        isFramework
-          ? wireStructuredWorkflowFramework(project, exercise)
-          : wireStructuredWorkflowLegacy(project, exercise);
+        if (isFramework) {
+          wireStructuredWorkflowFramework(project, exercise);
+        } else {
+          wireStructuredWorkflowLegacy(project, exercise);
+        }
       }
 
       return;
@@ -930,7 +938,17 @@ function wireStructuredWorkflowFramework(project, exercise) {
       if (!project.data.inputs) project.data.inputs = {};
       project.data.inputs[inp.key] = ctl.value;
       touchProject(project);
-      renderRunner(); // re-render so prompt preview updates everywhere consistently
+
+      // update preview live without tearing down DOM on every keystroke
+      const preview = document.getElementById("fw_prompt_preview");
+      if (preview) {
+        const tmpl =
+          step?.prompt_block?.prompt_template ||
+          step?.prompt_block?.body ||
+          "";
+        const stepData = project.data.steps?.[stepId] || {};
+        preview.value = renderPromptTemplate(tmpl, project.data.inputs || {}, stepData);
+      }
     };
 
     ctl.addEventListener("input", handler);
@@ -965,7 +983,13 @@ function wireStructuredWorkflowFramework(project, exercise) {
   if (btnCopy) {
     btnCopy.addEventListener("click", async () => {
       const text = document.getElementById("fw_prompt_preview")?.value || "";
-      await navigator.clipboard.writeText(text);
+      try {
+        if (navigator.clipboard && typeof navigator.clipboard.writeText === "function") {
+          await navigator.clipboard.writeText(text);
+        }
+      } catch {
+        // Fallback for restricted clipboard contexts
+      }
       btnCopy.textContent = "Copied";
       setTimeout(() => (btnCopy.textContent = "Copy Prompt"), 900);
 
@@ -1055,7 +1079,13 @@ function wireStructuredWorkflowLegacy(project, exercise) {
   runnerBody.querySelectorAll("[data-copy]").forEach(btn => {
     btn.addEventListener("click", async () => {
       const text = btn.getAttribute("data-copy") || "";
-      await navigator.clipboard.writeText(text);
+      try {
+        if (navigator.clipboard && typeof navigator.clipboard.writeText === "function") {
+          await navigator.clipboard.writeText(text);
+        }
+      } catch {
+        // Fallback for restricted clipboard contexts
+      }
       btn.textContent = "Copied";
       setTimeout(() => (btn.textContent = "Copy"), 900);
     });
@@ -1336,11 +1366,6 @@ function escapeAttr(str) {
 }
 
 /** ---------------------------
- *  Boot
- *  --------------------------*/
-init();
-
-/** ---------------------------
  *  Standard Capability & Governance Layer
  *  --------------------------*/
 function renderCapabilityGovernanceLayer(project) {
@@ -1383,4 +1408,78 @@ function wireCapabilityGovernanceLayer(project) {
       touchProject(project);
     });
   }
+}
+
+/** ---------------------------
+ *  Boot & Exports
+ *  --------------------------*/
+if (typeof document !== "undefined" && document.getElementById("viewDashboard")) {
+  init();
+}
+
+const AIWorkflowApp = {
+  APP_VERSION,
+  STORAGE_KEY,
+  IMPORTED_EXERCISES_KEY,
+  BUNDLED_INDEX_URL,
+  BUILTIN_EXERCISES,
+  TEMPLATE_LABELS,
+  loadProjectStore,
+  saveProjectStore,
+  loadImportedExercises,
+  saveImportedExercises,
+  fetchExercisesIndex,
+  fetchExerciseById,
+  validateExerciseMinimal,
+  populateExercisePickers,
+  buildExerciseRegistryList,
+  createProjectFromExerciseMeta,
+  initProjectDataForTemplate,
+  getProjectById,
+  getActiveProject,
+  touchProject,
+  buildMarkdownRecord,
+  renderGlobalInputControl,
+  renderStepFieldControl,
+  renderPromptTemplate,
+  clamp,
+  safeFilename,
+  escapeHTML,
+  escapeAttr,
+  renderCapabilityGovernanceLayer,
+  wireCapabilityGovernanceLayer,
+  openNewProjectModal,
+  closeNewProjectModal,
+  renameProject,
+  closeRenameProjectModal,
+  saveRenameProject,
+  deleteProject,
+  duplicateProject,
+  showDashboard,
+  showRunner,
+  openProject,
+  renderDashboard,
+  renderRunner,
+  init,
+  getState: () => ({
+    get store() { return STORE; },
+    set store(v) { STORE = v; },
+    get activeProjectId() { return ACTIVE_PROJECT_ID; },
+    set activeProjectId(v) { ACTIVE_PROJECT_ID = v; },
+    get bundledIndex() { return BUNDLED_INDEX; },
+    set bundledIndex(v) { BUNDLED_INDEX = v; },
+    get exerciseCache() { return EXERCISE_CACHE; },
+    get importedExercises() { return IMPORTED_EXERCISES; },
+    set importedExercises(v) { IMPORTED_EXERCISES = v; },
+    get sourceStatus() { return EXERCISE_SOURCE_STATUS; }
+  })
+};
+
+if (typeof window !== "undefined") {
+  window.AIWorkflowApp = AIWorkflowApp;
+} else if (typeof globalThis !== "undefined") {
+  globalThis.AIWorkflowApp = AIWorkflowApp;
+}
+if (typeof module !== "undefined" && module.exports) {
+  module.exports = AIWorkflowApp;
 }
